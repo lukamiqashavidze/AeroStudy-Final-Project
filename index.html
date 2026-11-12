@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="AeroStudy — სტუდენტის სასწავლო ამოცანებისა და პროგრესის მართვის ვებაპლიკაცია.">
+  <meta name="theme-color" content="#101a36">
+  <title>AeroStudy — შენი სწავლის კაბინა</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">გადადით ძირითად შინაარსზე</a>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a href="#home" class="brand" aria-label="AeroStudy — მთავარი"><span class="brand-mark" aria-hidden="true">✦</span><span>Aero<span class="accent">Study</span></span></a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-controls="mainNav" aria-expanded="false" aria-label="მენიუს გახსნა">☰</button>
+      <nav id="mainNav" class="main-nav" aria-label="მთავარი ნავიგაცია">
+        <a href="#home">მთავარი</a><a href="#tasks">დავალებები</a><a href="#insights">პროგრესი</a><a href="#about">პროექტის შესახებ</a>
+      </nav>
+      <span class="nav-tag">STUDENT WORKSPACE <span aria-hidden="true">↗</span></span>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="heroTitle">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot"></span> STUDY CONTROL CENTER / 2026</p>
+          <h1 id="heroTitle">გეგმავ უკეთ.<br><span>აღწევ მეტს.</span></h1>
+          <p class="hero-lead">შენი ამოცანები, ვადები და ყოველდღიური პროგრესი ერთ მოწესრიგებულ სივრცეში. მოაწესრიგე სწავლა და შეინარჩუნე მთავარი — დრო.</p>
+          <div class="hero-actions"><a class="button button-primary" href="#tasks">დაიწყე დაგეგმვა <span aria-hidden="true">↗</span></a><a class="button button-outline" href="#about">როგორ მუშაობს</a></div>
+          <p class="hero-footnote">✓ მონაცემები ინახება შენს ბრაუზერში &nbsp; ✓ რეგისტრაციის გარეშე</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="hero-art-card"><div class="art-top"><span>MISSION STATUS</span><span class="pill-dot">● ACTIVE</span></div><div class="art-glyph">✦</div><div class="art-line"></div><div class="art-line small"></div><div class="art-metrics"><span>FOCUS<br><b>100%</b></span><span>MODE<br><b>READY</b></span></div></div>
+          <div class="art-badge art-badge-one">↗ &nbsp; KEEP CLIMBING</div><div class="art-badge art-badge-two">✳ &nbsp; PLAN · DO · GROW</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dashboard-section" id="tasks" aria-labelledby="tasksTitle">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow dark">01 / WORKSPACE</p><h2 id="tasksTitle">შენი დავალებები<span class="heading-dot">.</span></h2><p>შექმენი, მონიშნე ან შეცვალე დავალებები — ყველაფერი შენს კონტროლშია.</p></div><button id="newTaskButton" class="button button-primary" type="button">+ ახალი დავალება</button></div>
+        <div class="metrics" id="insights" aria-label="პროგრესის სტატისტიკა">
+          <article class="metric"><span class="metric-label">ყველა დავალება <span>↗</span></span><strong id="totalCount">0</strong><small>შენს სამუშაო სიაში</small></article>
+          <article class="metric"><span class="metric-label">მიმდინარე <span>◷</span></span><strong id="activeCount">0</strong><small>ჯერ შესასრულებელია</small></article>
+          <article class="metric"><span class="metric-label">დასრულებული <span>✓</span></span><strong id="completedCount">0</strong><small>უკვე მიღწეული შედეგი</small></article>
+          <article class="metric metric-highlight"><span class="metric-label">პროგრესი <span>↗</span></span><strong id="progressPercent">0%</strong><div class="progress-track" role="progressbar" id="progressBar" aria-label="შესრულების პროცენტი" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="progressFill"></span></div></article>
+        </div>
+
+        <div class="workspace-panel">
+          <div class="panel-top"><div><p class="eyebrow dark">TASK OVERVIEW</p><h3>სამუშაო სია</h3></div><span id="listSummary" class="muted">0 დავალება</span></div>
+          <div class="toolbar"><div class="filters" role="group" aria-label="დავალებების ფილტრი"><button type="button" data-filter="all" class="filter active" aria-pressed="true">ყველა</button><button type="button" data-filter="active" class="filter" aria-pressed="false">მიმდინარე</button><button type="button" data-filter="completed" class="filter" aria-pressed="false">დასრულებული</button></div><label class="search-field"><span class="visually-hidden">დავალების ძებნა</span><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="მოძებნე დავალება..."></label><label class="sort-field"><span class="visually-hidden">დალაგება</span><select id="sortSelect"><option value="newest">უახლესი</option><option value="due">უახლოესი ვადა</option><option value="title">სათაურით</option></select></label></div>
+          <ul id="taskList" class="task-list" aria-live="polite"></ul>
+          <div id="emptyState" class="empty-state" hidden><div class="empty-icon">✳</div><h4>ამ ფილტრში დავალებები არ არის</h4><p>შეცვალე ფილტრი ან დაამატე ახალი დავალება.</p></div>
+          <div class="panel-bottom"><span id="remainingNote">ყველა საქმე თავის დროზე.</span><button id="clearCompleted" type="button" class="text-button">დასრულებულების წაშლა</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tips-section" aria-labelledby="tipsTitle"><div class="container tips-grid"><div><p class="eyebrow">02 / STUDY TIPS</p><h2 id="tipsTitle">პატარა ნაბიჯები.<br><span>დიდი შედეგი.</span></h2><p>მარტივი იდეები ყოველდღიური სწავლის გასამარტივებლად.</p></div><div class="tips-carousel" aria-roledescription="კარუსელი" aria-label="სწავლის რჩევები"><div class="tip-count" id="tipCount">01 / 03</div><blockquote id="tipText">დაყავი დიდი დავალება მცირე ნაბიჯებად — ასე დაწყება უფრო მარტივია.</blockquote><div class="tip-controls"><button type="button" id="prevTip" aria-label="წინა რჩევა">←</button><button type="button" id="nextTip" aria-label="შემდეგი რჩევა">→</button></div></div></div></section>
+    <section class="about-section" id="about" aria-labelledby="aboutTitle"><div class="container about-grid"><div><p class="eyebrow dark">03 / ABOUT THE PROJECT</p><h2 id="aboutTitle">ერთი სივრცე. <span>მეტი ფოკუსი.</span></h2></div><div><p>AeroStudy შეიქმნა SkillWill-ის პრაქტიკული პროექტისთვის. ეს არის დამოუკიდებელი Front-end ვებაპლიკაცია, რომელიც აერთიანებს HTML5-ის სემანტიკურ სტრუქტურას, CSS3-ის რესპონსიულ დიზაინსა და JavaScript-ის რეალურ ფუნქციონალს.</p><p>გამოყენებულია ბრაუზერის <code>localStorage</code>, ამიტომ ამოცანები ინახება ამავე მოწყობილობაზე. სერვერზე მონაცემები არ იგზავნება.</p></div></div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><a href="#home" class="brand"><span class="brand-mark" aria-hidden="true">✦</span><span>Aero<span class="accent">Study</span></span></a><span>SkillWill • პრაქტიკული პროექტი • 2026</span><a href="#home">ზემოთ ↑</a></div></footer>
+
+  <dialog id="taskDialog" aria-labelledby="dialogTitle"><form id="taskForm" novalidate><div class="dialog-head"><div><p class="eyebrow dark">YOUR NEXT STEP</p><h2 id="dialogTitle">ახალი დავალება</h2></div><button type="button" class="close-button" id="closeDialog" aria-label="ფანჯრის დახურვა">×</button></div><input type="hidden" id="taskId"><label for="taskTitle">დავალების სათაური <span aria-hidden="true">*</span></label><input id="taskTitle" name="title" maxlength="90" required placeholder="მაგ.: მათემატიკის კონსპექტის მომზადება"><div class="form-row"><div><label for="taskSubject">საგანი / კატეგორია</label><select id="taskSubject"><option>ზოგადი</option><option>მათემატიკა</option><option>პროგრამირება</option><option>ინგლისური</option><option>ავიაცია</option><option>სხვა</option></select></div><div><label for="taskDue">ვადა</label><input id="taskDue" type="date"></div></div><label for="taskNotes">შენიშვნა</label><textarea id="taskNotes" maxlength="240" rows="3" placeholder="დამატებითი ინფორმაცია (არასავალდებულო)"></textarea><p id="formError" class="form-error" role="alert" hidden></p><div class="dialog-actions"><button type="button" class="button button-ghost" id="cancelDialog">გაუქმება</button><button type="submit" class="button button-primary">შენახვა ✓</button></div></form></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
